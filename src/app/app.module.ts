@@ -18,6 +18,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { MatInputModule } from '@angular/material/input'
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { FormsModule } from '@angular/forms';
+import { CartDialogComponent } from './pages/cart-dialog/cart-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ListElementComponent } from './pages/cart-dialog/list-element/list-element.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     PizzaComponent,
     SidemenuComponent,
     CardComponent,
-    ContactComponent
+    ContactComponent,
+    CartDialogComponent,
+    ListElementComponent
   
   ],
   imports: [
@@ -41,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatInputModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
     
   ],
   providers: [],
