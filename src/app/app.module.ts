@@ -21,7 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { CartDialogComponent } from './pages/cart-dialog/cart-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ListElementComponent } from './pages/cart-dialog/list-element/list-element.component';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { ListElementComponent } from './pages/cart-dialog/list-element/list-elem
     MatInputModule,
     Ng2SearchPipeModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatButtonModule
     
   ],
   providers: [],

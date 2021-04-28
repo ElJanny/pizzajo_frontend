@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit {
   goToCart(){
     console.log(this.purchases)
     const dialogRef = this.dialog.open(CartDialogComponent, {
-      width: '50%',
-      height: '50%'
+      width: '75%',
+      height: '75%'
     });
 
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-element',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-element.component.css']
 })
 export class ListElementComponent implements OnInit {
+  @Input() food_name
+  @Input() food_price
 
   constructor() { }
 

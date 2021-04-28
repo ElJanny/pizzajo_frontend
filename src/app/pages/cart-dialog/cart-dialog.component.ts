@@ -12,6 +12,7 @@ import { HeaderComponent } from '../header/header.component';
 export class CartDialogComponent implements OnInit  {
 
   public purchases : Food[]
+  public displayedColumns: string[] = ['food_name', 'food_price', 'Number', 'Delete'];
 
   constructor(
     public dialogRef: MatDialogRef<HeaderComponent>,
