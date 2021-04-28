@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  
+}
+.card{
+    margin: 10px;
+}
+
+.food-spinner{
+    display: inline-flex;
+    width: 100%;
+}
+.spacer{
+    width: 100%;
+}
+
+.fa-arrow-down{
+    transform: rotate(0deg);
+    transition: transform 1s linear;
+  }
+  
+  .fa-arrow-down.open{
+    transform: rotate(180deg);
+    transition: transform 1s linear;
+  }

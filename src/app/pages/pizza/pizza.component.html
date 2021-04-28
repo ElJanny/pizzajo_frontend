@@ -1,0 +1,15 @@
+<div class="food-spinner">
+    <span>Pizzák</span>
+    <div class="spacer"> </div>
+  
+    <input matInput [(ngModel)]="searchPizza" />
+    <button mat-icon-button (click)="setopenPizza()">
+        <mat-icon> keyboard_arrow_up </mat-icon>
+    </button>   
+</div>
+
+<div class = "container" *ngIf="openPizza==true">
+        <div class="card" *ngFor="let card of Items | filter: searchPizza">
+          <app-card  [name]="card.name" [summary]="card.summary" [price]="card.price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+        </div>
+</div>
