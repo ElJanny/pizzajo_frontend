@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Food } from 'src/app/core/models/food.model';
 import { CartService } from 'src/app/services/cart-service/cart.service';
 
 @Component({
@@ -7,14 +8,15 @@ import { CartService } from 'src/app/services/cart-service/cart.service';
   styleUrls: ['./pizza.component.css']
 })
 export class PizzaComponent implements OnInit {
-  Items: carditem[]
+  Items: Food[]
+  Pizzas: Food[] =[]
   openPizza: boolean
   searchPizza: string
   constructor(private _CartService: CartService) { }
 
   ngOnInit(): void {
     this.openPizza= false
-    this.Items = [
+    /*this.Items = [
       new carditem("pizza1","ez egy jo pizza",1500, 2),
       new carditem("pizza1","ez egy jo pizza",1500, 4),
       new carditem("szalámis","ez egy jo pizza",3000, 6),
@@ -24,7 +26,21 @@ export class PizzaComponent implements OnInit {
       new carditem("pizza1","ez egy jo pizza",1500, 12),
       new carditem("pizza1","ez egy jo pizza",1500, 2),
       new carditem("pizza1","ez egy jo pizza",1500, 2),
+  ]*/
+
+  this.Items =[
+    {id: 1, food_group: 1, food_name: "Sonkás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
+    {id: 2, food_group: 1, food_name: "szalámis Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
+    {id: 3, food_group: 1, food_name: "kukoricás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
+    {id: 4, food_group: 1, food_name: "nutellás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
+    {id: 5, food_group: 2, food_name: "nutellás Gyros", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" }
   ]
+
+  this.Items.forEach(element =>{
+    if(element.food_group === 1){
+      this.Pizzas.push(element)
+    }
+  })
   }
 
   setopenPizza(){
@@ -32,11 +48,8 @@ export class PizzaComponent implements OnInit {
   }
 
   addToCart(event){
-    console.log(event)
-   // this._CartService.addcartItems(1)
+    
+   this._CartService.addcartItems(this.Items.find(x => x.id == event))
   }
 }
  
-class carditem{
-  constructor(public name,public summary,public price,public id){}
-}

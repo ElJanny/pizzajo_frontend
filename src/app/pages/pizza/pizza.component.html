@@ -9,7 +9,7 @@
 </div>
 
 <div class = "container" *ngIf="openPizza==true">
-        <div class="card" *ngFor="let card of Items | filter: searchPizza">
-          <app-card  [name]="card.name" [summary]="card.summary" [price]="card.price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+        <div class="card" *ngFor="let card of Pizzas | filter: searchPizza">
+          <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
         </div>
 </div>

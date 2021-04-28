@@ -6,7 +6,7 @@
       <span class="example-spacer"></span>
     
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-       <mat-icon [matBadge]="purchases.length" >shopping_cart</mat-icon>
+       <mat-icon [matBadge]="purchases.length" (click)="goToCart()">shopping_cart</mat-icon>
      </button>
     </mat-toolbar>
   </p>

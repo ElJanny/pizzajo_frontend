@@ -18,4 +18,7 @@ export class HeaderComponent implements OnInit {
     this._CartService.getcartItems().subscribe(data => { this.purchases = data})
   }
 
+  goToCart(){
+    console.log(this.purchases)
+  }
 }
