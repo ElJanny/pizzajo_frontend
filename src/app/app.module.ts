@@ -20,9 +20,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { FormsModule } from '@angular/forms';
 import { CartDialogComponent } from './pages/cart-dialog/cart-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { ListElementComponent } from './pages/cart-dialog/list-element/list-element.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import { MakeOrderComponent } from './pages/cart-dialog/make-order/make-order.component';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import {MatButtonModule} from '@angular/material/button';
     CardComponent,
     ContactComponent,
     CartDialogComponent,
-    ListElementComponent
+    MakeOrderComponent,
   
   ],
   imports: [
@@ -51,7 +53,8 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     MatDialogModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule
     
   ],
   providers: [],

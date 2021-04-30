@@ -1,0 +1,28 @@
+<div class="container" >
+    <div class="inline-container" >
+        <input matInput placeholder="Vezetéknév" [(ngModel)]="firstname" >
+        <input matInput placeholder="Keresztnév" [(ngModel)]="surname" >
+    </div>
+    <div class="inline-container" >
+        <input matInput placeholder="Telefonszám" type="text"  [(ngModel)]="phonenumber" >
+        <input matInput placeholder="Email" [(ngModel)]="email" >
+    </div>
+    <div class="inline-container">
+        <input matInput placeholder="Irányítószám" type="number"  [(ngModel)]="zipcode" >
+        <input matInput placeholder="Város"[(ngModel)]="city" >
+    </div>
+    <div class="inline-container">
+        <input matInput placeholder="Utca" [(ngModel)]="street" >
+        <input matInput placeholder="Házszám" type="number"  [(ngModel)]="housenumber" >
+    </div>
+    <div class="inline-container">
+        <mat-radio-group [(ngModel)]="paymentmode">
+            <mat-radio-button value="1">készpénz</mat-radio-button>
+            <mat-radio-button value="2">kártya</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="inline-container">
+       <Button mat-button (click)="goback()" >Vissza</Button>
+       <Button mat-button (click)="order()" >Rendelés leadása</Button>
+    </div>
+</div>
