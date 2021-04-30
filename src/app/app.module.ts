@@ -24,6 +24,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { MakeOrderComponent } from './pages/cart-dialog/make-order/make-order.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDialogModule,
     MatTableModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
     
   ],
   providers: [],

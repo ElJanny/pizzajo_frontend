@@ -1,15 +1,49 @@
-<div class="food-spinner">
-    <span>Pizzák</span>
+<div class="page-container"> 
+  <div class="food-spinner">
+      <span>Pizzák</span>
+      <div class="spacer"> </div>
+    
+      <input matInput [(ngModel)]="searchPizza" />
+      <button mat-icon-button (click)="setopenPizza()" [ngClass]="{'fa-arrow-down': !openPizza, 'fa-arrow-down-open': openPizza}">
+          <mat-icon> keyboard_arrow_up </mat-icon>
+      </button>   
+  </div>
+
+  <div class = "container" *ngIf="openPizza==true">
+          <div class="card" *ngFor="let card of Pizzas | filter: searchPizza">
+            <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+          </div>
+  </div>
+
+  <div class="food-spinner">
+    <span>Gyrosok</span>
     <div class="spacer"> </div>
-  
-    <input matInput [(ngModel)]="searchPizza" />
-    <button mat-icon-button (click)="setopenPizza()">
+
+    <input matInput [(ngModel)]="searchGyros" />
+    <button mat-icon-button (click)="setopenGyros()" [ngClass]="{'fa-arrow-down': !openGyros, 'fa-arrow-down-open': openGyros}">
         <mat-icon> keyboard_arrow_up </mat-icon>
     </button>   
-</div>
+  </div>
 
-<div class = "container" *ngIf="openPizza==true">
-        <div class="card" *ngFor="let card of Pizzas | filter: searchPizza">
+  <div class = "container" *ngIf="openGyros==true">
+        <div class="card" *ngFor="let card of Gyros | filter: searchGyros">
           <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
         </div>
+  </div>
+
+  <div class="food-spinner">
+    <span>Hamburgerek</span>
+    <div class="spacer"> </div>
+
+    <input matInput [(ngModel)]="searchHamburger" />
+    <button mat-icon-button (click)="setopenHamburger()" [ngClass]="{'fa-arrow-down': !openHamburger, 'fa-arrow-down-open': openHamburger}">
+        <mat-icon> keyboard_arrow_up </mat-icon>
+    </button>   
+  </div>
+
+  <div class = "container" *ngIf="openHamburger==true">
+        <div class="card" *ngFor="let card of Hamburgers | filter: searchHamburger">
+          <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+        </div>
+  </div>
 </div>

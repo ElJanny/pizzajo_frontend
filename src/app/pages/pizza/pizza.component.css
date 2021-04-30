@@ -1,28 +1,50 @@
+.page-container{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    
+}
+.page-container::-webkit-scrollbar {
+    display: none;
+}
+
 .container{
     display: flex;
     padding: 10px;
     flex-wrap: wrap;
     width: 100%;
-  
-}
+    margin: auto;
+ }
 .card{
     margin: 10px;
 }
 
 .food-spinner{
     display: inline-flex;
-    width: 100%;
+    width: 99%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    align-items: center;
+    outline: 2px black solid;
 }
+
+span{
+    font-family: 	"Copperplate", Fantasy;
+    font-size: large;
+    margin-left: 15px;
+}
+
 .spacer{
     width: 100%;
 }
 
 .fa-arrow-down{
     transform: rotate(0deg);
-    transition: transform 1s linear;
+    transition: transform 0.25s linear;
   }
   
-  .fa-arrow-down.open{
+  .fa-arrow-down-open{
     transform: rotate(180deg);
-    transition: transform 1s linear;
+    transition: transform 0.25s linear;
   }

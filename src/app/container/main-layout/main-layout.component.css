@@ -4,3 +4,7 @@ mat-drawer{
 .example-container{
     height: 100%;
 }
+
+.example-container::-webkit-scrollbar {
+    display: none;
+}

@@ -18,7 +18,7 @@ export class CartDialogComponent implements OnInit  {
   public purchases : cartItem[] =[]
   private fooditems: Food[] 
   public displayedColumns: string[] = ['food_name', 'food_price', 'Number', 'Delete'];
-  public state: boolean = true
+  public state: boolean = false
   constructor(
     public dialogRef: MatDialogRef<HeaderComponent>,
     private cartService: CartService,
