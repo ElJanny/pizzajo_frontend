@@ -15,6 +15,7 @@
     width: 100%;
     margin: auto;
  }
+ 
 .card{
     margin: 10px;
 }
@@ -26,7 +27,7 @@
     margin-right: 5px;
     margin-top: 15px;
     align-items: center;
-    outline: 2px black solid;
+    outline: 2px #f44336 solid;
 }
 
 span{
@@ -47,4 +48,12 @@ span{
   .fa-arrow-down-open{
     transform: rotate(180deg);
     transition: transform 0.25s linear;
+  }
+
+  .mat-icon{
+      transition: 0.4s;
+  }
+  .mat-icon:hover{
+    background-color: #f44336;
+    color: white;
   }
