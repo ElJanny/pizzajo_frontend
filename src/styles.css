@@ -3,7 +3,8 @@ body{
  margin: 0px;
 }
 
-html, body { height: 100%;width: 100%; }
+html, body { height: 100%;
+    width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-y: scroll; overflow-x: hidden;}
 body::-webkit-scrollbar {
     display: none;
