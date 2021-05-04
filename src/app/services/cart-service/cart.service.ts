@@ -13,6 +13,7 @@ export class CartService {
   }
 
   public addcartItems(value){
+    console.log(value)
     this.cartItems.next(this.cartItems.getValue().concat(value));
   }
   

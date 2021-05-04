@@ -1,7 +1,7 @@
 import { Identifiers } from "@angular/compiler";
 
 export interface Food{
-    id?: number;
+    food_id?: number;
     food_group?: number;
     food_name?: string;
     food_price?: number;

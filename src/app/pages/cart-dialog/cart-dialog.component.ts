@@ -34,17 +34,17 @@ export class CartDialogComponent implements OnInit  {
     foods.forEach(element =>
       {
           this.price += element.food_price
-          this.fooditems.push({id: element.id, food_name: element.food_name, food_price: element.food_price, food_ingredients: element.food_ingredients, food_group: element.food_group, food_picture: element.food_picture})
+          this.fooditems.push({food_id: element.food_id, food_name: element.food_name, food_price: element.food_price, food_ingredients: element.food_ingredients, food_group: element.food_group, food_picture: element.food_picture})
           let equal: boolean = false;
           this.purchases.forEach(elem =>{
-            if (element.id === elem.id){
+            if (element.food_id === elem.food_id){
               equal=true;
               elem.food_price+= element.food_price;
               elem.quantity++;
             }
           })
           if(equal===false){
-            let tmpItem : cartItem = {id: element.id, food_name: element.food_name, food_price: element.food_price, quantity: 1, element_price: element.food_price}
+            let tmpItem : cartItem = {food_id: element.food_id, food_name: element.food_name, food_price: element.food_price, quantity: 1, element_price: element.food_price}
             this.purchases.push(tmpItem)
           }
       })
@@ -58,7 +58,7 @@ export class CartDialogComponent implements OnInit  {
 
   removeQuantity(element: cartItem): void{
     for(let i =0 ; i<this.fooditems.length;++i){
-      if(this.fooditems[i].id === element.id){
+      if(this.fooditems[i].food_id === element.food_id){
         this.fooditems.splice(i,1);
         break
       }
@@ -71,13 +71,13 @@ export class CartDialogComponent implements OnInit  {
   }
 
   sendOrder(event: Object): void{
-      this._OrderService.makeOrder(this.fooditems,event)
+      this._OrderService.makeOrder(this.purchases,event,this.price)
       this.cartService.setcartItems([])
       this.dialogRef.close()
   }
 }
 
-interface cartItem extends Food{
+export interface cartItem extends Food{
   quantity?: number;
   element_price?: number;
 }

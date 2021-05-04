@@ -1,5 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-card',
@@ -11,12 +13,13 @@ export class CardComponent implements OnInit {
   @Input() price: string
   @Input() summary: string
   @Input() id: number
-  @Input() picture: HTMLImageElement
+  @Input() picture: string
   @Output() purchase = new EventEmitter<number>();
-  constructor() { }
+  public titleImageurl;
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    
+    this.titleImageurl = this.sanitizer.bypassSecurityTrustResourceUrl('data:image/png;base64, '+ this.picture)
   }
 
   addToCart(){

@@ -16,6 +16,9 @@
         <input matInput placeholder="Házszám" type="number"  [(ngModel)]="housenumber" >
     </div>
     <div class="inline-container">
+        <textarea matInput placeholder="Megjegyzés..." [(ngModel)]="note" ></textarea>
+    </div>
+    <div class="inline-container">
         <mat-radio-group [(ngModel)]="paymentmode">
             <mat-radio-button value="1">készpénz</mat-radio-button>
             <mat-radio-button value="2">kártya</mat-radio-button>

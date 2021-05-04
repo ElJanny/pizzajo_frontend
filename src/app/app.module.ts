@@ -25,7 +25,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { MakeOrderComponent } from './pages/cart-dialog/make-order/make-order.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
+import { AdminCardComponent } from './pages/admin-panel/card/card.component';
+import { TableComponent } from './pages/admin-panel/table/table.component'
 
 @NgModule({
   declarations: [
@@ -38,6 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     CartDialogComponent,
     MakeOrderComponent,
+    AdminPanelComponent,
+    AdminCardComponent,
+    TableComponent
   
   ],
   imports: [

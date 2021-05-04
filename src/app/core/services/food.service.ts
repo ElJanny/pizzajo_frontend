@@ -16,8 +16,8 @@ export class FoodService{
             params:{
                 food_group_id: food_group_id
             },
-            'Access-Control-Allow-Origin': '*'
+          
         }
-        return this.http.get<Food[]>(SERVERURL,httpOptions)
+        return this.http.get<Food[]>(SERVERURL+'api/Food',httpOptions)
     }
 }

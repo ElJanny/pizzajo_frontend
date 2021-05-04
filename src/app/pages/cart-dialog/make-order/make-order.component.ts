@@ -17,6 +17,7 @@ export class MakeOrderComponent implements OnInit {
   public street: string ;
   public housenumber: string ;
   public paymentmode: number;
+  public note: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class MakeOrderComponent implements OnInit {
   order(): void{
     this.makeOrder.emit({
       firstname: this.firstname,surname: this.surname,phonenumber: this.phonenumber,email: this.email,
-      zipcode: this.zipcode,city: this.city,street: this.street,housenumber: this.housenumber,paymentmode: this.paymentmode})
+      zipcode: this.zipcode,city: this.city,street: this.street,housenumber: this.housenumber,paymentmode: this.paymentmode, note: this.note})
   }
 
   goback(): void{

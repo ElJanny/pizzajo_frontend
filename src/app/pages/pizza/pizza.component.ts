@@ -26,21 +26,23 @@ export class PizzaComponent implements OnInit{
     private _FoodService: FoodService) { }
 
   ngOnInit(): void {
-    this.openPizza = false
-    this.openGyros = false
-    this.openHamburger = false
+    this.openPizza = true
+    this.openGyros = true
+    this.openHamburger = true
     this.Items=[]
     this._FoodService.getFoods("1").subscribe(data =>
        {this.Pizzas=data
-        this.Items.concat(this.Pizzas)})
+        this.Items.concat(data)})
 
     this._FoodService.getFoods("2").subscribe(data => 
       {this.Hamburgers=data
-        this.Items.concat(this.Hamburgers)})
+        this.Items.concat(data)})
 
     this._FoodService.getFoods("3").subscribe(data => 
       {this.Gyros=data
-        this.Items.concat(this.Gyros)})
+        this.Items.concat(data)
+      })
+      
   }
 
   setopenPizza(){
@@ -56,7 +58,13 @@ export class PizzaComponent implements OnInit{
   }
 
   addToCart(event){
-   this._CartService.addcartItems(this.Items.find(x => x.id == event))
+  this.Items = []
+ this.Items=this.Items.concat(this.Hamburgers)
+ this.Items=this.Items.concat(this.Pizzas)
+ this.Items=this.Items.concat(this.Gyros)
+  console.log(this.Items)
+   this._CartService.addcartItems(this.Items.find(x => x.food_id == event))
+  
   }
 }
  

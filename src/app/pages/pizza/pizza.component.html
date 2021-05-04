@@ -11,7 +11,7 @@
 
   <div class = "container" *ngIf="openPizza==true">
           <div class="card" *ngFor="let card of Pizzas | filter: searchPizza">
-            <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+            <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.food_id" (purchase)="addToCart($event)" [picture]="card.food_picture"></app-card>
           </div>
   </div>
 
@@ -27,7 +27,7 @@
 
   <div class = "container" *ngIf="openGyros==true">
         <div class="card" *ngFor="let card of Gyros | filter: searchGyros">
-          <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+          <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.food_id" [picture]="card.food_picture" (purchase)="addToCart($event)"></app-card>
         </div>
   </div>
 
@@ -43,7 +43,7 @@
 
   <div class = "container" *ngIf="openHamburger==true">
         <div class="card" *ngFor="let card of Hamburgers | filter: searchHamburger">
-          <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.id" (purchase)="addToCart($event)"></app-card>
+          <app-card  [name]="card.food_name" [summary]="card.food_ingredients" [price]="card.food_price" [id]="card.food_id" [picture]="card.food_picture" (purchase)="addToCart($event)"></app-card>
         </div>
   </div>
 </div>
