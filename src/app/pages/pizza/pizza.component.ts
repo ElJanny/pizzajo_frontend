@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Food } from 'src/app/core/models/food.model';
+import { FoodService } from 'src/app/core/services/food.service';
 import { CartService } from 'src/app/services/cart-service/cart.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CartService } from 'src/app/services/cart-service/cart.service';
   templateUrl: './pizza.component.html',
   styleUrls: ['./pizza.component.css']
 })
-export class PizzaComponent implements OnInit {
+export class PizzaComponent implements OnInit{
   //All Food
   private Items: Food[]
   public Pizzas: Food[] =[]
@@ -20,39 +21,26 @@ export class PizzaComponent implements OnInit {
   public searchHamburger: string
   public openGyros: boolean
   public searchGyros: string
-  constructor(private _CartService: CartService) { }
+  constructor(
+    private _CartService: CartService,
+    private _FoodService: FoodService) { }
 
   ngOnInit(): void {
     this.openPizza = false
     this.openGyros = false
     this.openHamburger = false
+    this.Items=[]
+    this._FoodService.getFoods("1").subscribe(data =>
+       {this.Pizzas=data
+        this.Items.concat(this.Pizzas)})
 
-  this.Items =[
-    {id: 1, food_group: 1, food_name: "Sonkás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 2, food_group: 1, food_name: "szalámis Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 3, food_group: 1, food_name: "kukoricás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 4, food_group: 1, food_name: "nutellás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 5, food_group: 2, food_name: "nutellás Gyros", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 6, food_group: 1, food_name: "Sonkás Pizza", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 7, food_group: 3, food_name: "szalámis Hamburger", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 8, food_group: 2, food_name: "kukoricás Gyros", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 9, food_group: 2, food_name: "nutellás Gyros", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" },
-    {id: 10, food_group: 3, food_name: "nutellás Hamburger", food_price: 2500, food_ingredients: "paprika,szalámi,kolbász" }
-  ]
+    this._FoodService.getFoods("2").subscribe(data => 
+      {this.Hamburgers=data
+        this.Items.concat(this.Hamburgers)})
 
-  this.Items.forEach(element =>{
-    switch(element.food_group){
-      case 1:
-        this.Pizzas.push(element)
-        break;
-      case 2:
-        this.Gyros.push(element)
-        break;
-      case 3:
-        this.Hamburgers.push(element)
-        break;
-    }
-  })
+    this._FoodService.getFoods("3").subscribe(data => 
+      {this.Gyros=data
+        this.Items.concat(this.Gyros)})
   }
 
   setopenPizza(){
@@ -68,7 +56,6 @@ export class PizzaComponent implements OnInit {
   }
 
   addToCart(event){
-    
    this._CartService.addcartItems(this.Items.find(x => x.id == event))
   }
 }
