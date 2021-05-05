@@ -29,7 +29,9 @@
     margin-right: 5px;
     margin-top: 15px;
     align-items: center;
-    outline: 2px #f44336 solid;
+    outline: 3px blanchedalmond solid;
+    background-color: #552220;
+    color:blanchedalmond;
 }
 
 span{

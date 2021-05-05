@@ -1,8 +1,9 @@
 .example-card {
     max-width: 400px;
     max-height: 470px;
-    border: 4px solid #f44336;
-    background-color: #ffffff;
+    border: 4px solid blanchedalmond;
+    background-color: #552220;
+    color: blanchedalmond;
   }
   
   .example-header-image {

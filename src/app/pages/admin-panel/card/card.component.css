@@ -1,8 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 .container{
     text-align: center;
-    background-color: #E2E2E2E2;
+    color: blanchedalmond;
+    background-color: #552220;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border: blanchedalmond 5px solid;
+    border-radius: 10%;
 }
 .title{
     font-size: 25px;
@@ -16,8 +19,10 @@
 }
 
 .quant span{
+    font-family: sans-serif,cursive;
     font-size: 25px;
-    color: green;
+    color: rgb(245, 241, 24);
+    font-family: 'Anton', sans-serif;
 }
 
 .price{
@@ -25,5 +30,6 @@
 }
 .price span{
     font-size: 25px;
-    color: green;
+    color: rgb(245, 241, 24);
+    font-family: 'Anton', sans-serif;
 }

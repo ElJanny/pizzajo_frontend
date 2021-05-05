@@ -1,9 +1,12 @@
 mat-drawer{
     background-color: red;
+    margin: 0;
+    
 }
 .example-container{
     height: 100%;
     background-color: 	#813531;
+    margin: 0;
 }
 
 .example-container::-webkit-scrollbar {
