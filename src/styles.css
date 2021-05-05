@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 body{
- padding: 0px;
- margin: 0px;
- background-color: #ffb80e;
+  padding: 0px;
+  margin: 0px;
 }
 
 html, body { height: 100%;
