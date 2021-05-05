@@ -3,6 +3,7 @@ mat-drawer{
 }
 .example-container{
     height: 100%;
+    background-color: 	#813531;
 }
 
 .example-container::-webkit-scrollbar {
