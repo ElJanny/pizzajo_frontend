@@ -15,7 +15,6 @@ import { SidemenuComponent } from './container/sidemenu/sidemenu.component'
 import { MatCardModule } from '@angular/material/card'
 import { CardComponent } from './container/card/card.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { MatInputModule } from '@angular/material/input'
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { FormsModule } from '@angular/forms';
 import { CartDialogComponent } from './pages/cart-dialog/cart-dialog.component';
@@ -28,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { AdminCardComponent } from './pages/admin-panel/card/card.component';
 import { TableComponent } from './pages/admin-panel/table/table.component'
-
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,

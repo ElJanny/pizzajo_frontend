@@ -16,7 +16,7 @@ export class MakeOrderComponent implements OnInit {
   public city: string ;
   public street: string ;
   public housenumber: string ;
-  public paymentmode: number;
+  public paymentmode: number ;
   public note: string;
   constructor() { }
 
@@ -24,9 +24,11 @@ export class MakeOrderComponent implements OnInit {
   }
 
   order(): void{
+    if(this.paymentmode>0){
     this.makeOrder.emit({
       firstname: this.firstname,surname: this.surname,phonenumber: this.phonenumber,email: this.email,
       zipcode: this.zipcode,city: this.city,street: this.street,housenumber: this.housenumber,paymentmode: this.paymentmode, note: this.note})
+    }
   }
 
   goback(): void{

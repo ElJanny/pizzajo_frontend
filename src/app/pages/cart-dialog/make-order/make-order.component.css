@@ -6,8 +6,18 @@
  align-items: center;
  justify-content: center;
  align-content: center;
+ background-color: 	#813531;
+ color: blanchedalmond;
 }
 
+textarea{
+    width: 25%;
+}
+
+span{
+    font-size: 40px;
+    margin: 15px;
+}
 .inline-container{
     width: 100%;
     display: inline-flex;

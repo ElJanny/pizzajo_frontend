@@ -7,7 +7,7 @@
       <ng-template #a>
         <div class="container">
         <span>
-          A korás összege: {{price}}
+          A kosár összege: {{price}}HUF
         </span>
         <table mat-table [dataSource]="purchases" class="mat-elevation-z8">
           
@@ -36,7 +36,7 @@
   </ng-template>
   
 <ng-template #elseBlock>
-  <div class="container">Nincs tétel a kosárban</div></ng-template>
+  <div class="container-empty"><span>Nincs tétel a kosárban</span></div></ng-template>
 
 </ng-template>
 
